@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Цены</title>
+    </head>
+    <body bgcolor="#40E0D0">
+        <center>
+            <h1>House Prices Prediction</h1>
+            
+
+            <form action="predict_prices" method="POST">
+                <b>
+                    Площадь участка:<br>(В среднем от 1000 до 11000)<br> <input type="number", name='LotArea', placeholder="", autocomplete="off", required="required"><br><br>
+                    Год постройки:<br>(В среднем от 1950 до 2005)<br> <input type="number", name='YearBuilt', placeholder="", autocomplete="off", required="required"><br><br>
+                    Количество спален:<br>(В среднем от 1 до 4)<br>  <input type="number", name='BedroomAbvGr', placeholder="" autocomplete="off", required="required"><br><br>
+                    Качество материалов и отделки дома:<br>(В среднем от 2 до 10)<br>  <input type="number", name='OverallQual', placeholder="", autocomplete="off", required="required"><br><br>
+                    Количество мест в гараже:<br>(В среднем от 0 до 3)<br>  <input type="number", name='GarageCars', placeholder="", autocomplete="off", required="required"><br><br><br>
+                    <input type="submit", value="Прогноз">
+                </b>
+            </form>
+            <div>
+                {{ data }}
+            </div>
+            <h4><input type="button" onclick="location.href='/'" value="Обратно к меню"></h4>
+        </center>
+    </body>
+</html>

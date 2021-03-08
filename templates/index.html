@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Симпсоны</title>
+</head>
+<body bgcolor="LightCoral">
+	<center>
+		<h1>Классификатор персонажей из Симпсонов</h1>
+
+		
+		<form action="predict_simpsons" method="POST" enctype="multipart/form-data">
+			<input type="file" name="file" required="required" accept="image/*">
+			<input type="submit" name="btn">
+		</form> <br><br><br>
+		{% if image != null %}
+		<img src= "{{url_for('static', filename=image)}}" height=450px> <br> <br>
+		{% endif %}
+		{{ ss }} <br>
+		{{ prob }}
+		<h4><input type="button" onclick="location.href='./'" value="Обратно к меню"></h4>
+	</center>
+</body>
+</html>
