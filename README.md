@@ -12,7 +12,7 @@
   <li>Развернуть в облаке на Heroku</li>
 </ol>
 <hr>
-<h4>Ссылка на итоговый проект: </h4>
+<h4>Ссылка на итоговый проект: https://ml-vuz-flask.herokuapp.com/</h4>
 <h4>Данные, использовавшиеся в работе:</h4>
 <ul>
   <li>https://www.kaggle.com/alexattia/the-simpsons-characters-dataset</li>
