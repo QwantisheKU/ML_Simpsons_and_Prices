@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=DotGothic16&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body, html {
+  width: 100%;
+  height: 100%;
+}
+body {
+    height: 200px;
+    font-family: "Monotype Corsiva" Cursive;
+    color:  #ffffff;
+   
+    background: repeating-linear-gradient(45deg, #e2b00d, #e2b00d 10px, rgb(248, 222, 73) 10px,rgb(248, 222, 73)20px);
+    }
+#logo {
+    background: linear-gradient(45deg,rgb(245, 240, 180), #ebdb53, #e2b00d);
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: 3px solid rgb(228, 165, 31);
+ 
+    font-family: "Monotype Corsiva" Cursive;
+
+  }
+a.button{
+    
+        color: #fff; /* цвет текста */
+        text-decoration: none; /* убирать подчёркивание у ссылок */
+        user-select: none; /* убирать выделение текста */
+        background: rgb(245, 121, 4); /* фон кнопки */
+        padding: .7em 1.5em; /* отступ от текста */
+        outline: none; /* убирать контур в Mozilla */
+        border-radius: 20px 20px; 
+      } 
+      a.button:hover { background:  #e2b00d } /* при наведении курсора мышки */
+      a.button:active { background: rgb(206, 82, 0); } /* при нажатии */
+
+  
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80%;
+    
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #e6a824 20%, #e7e56a 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+h1{
+  color: white;
+}

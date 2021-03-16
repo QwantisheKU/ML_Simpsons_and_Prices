@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style href="{{ url_for('static', filename='css/style.css') }}"></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<title>Симпсоны</title>
 </head>
-<body bgcolor="LightCoral">
-	<center>
-		<h1>Классификатор персонажей из Симпсонов</h1>
-
+<style>
+	span.output {
+    	font-size: 1.3em;
+	}
+</style>
+<body >
+	<header>
+        <div id="logo" >
+            <center><span>Классификатор персонажей из Симпсонов</span></center></div>
+    </header>
+		
+		<center>
+		<script href="index.js"></script>
 		
 		<form action="predict_simpsons" method="POST" enctype="multipart/form-data">
 			<input type="file" name="file" required="required" accept="image/*">
@@ -15,9 +29,31 @@
 		{% if image != null %}
 		<img src= "{{url_for('static', filename='img/'+image)}}" height=450px> <br> <br>
 		{% endif %}
-		{{ ss }} <br>
-		{{ prob }}
-		<h4><input type="button" onclick="location.href='./'" value="Обратно к меню"></h4>
+		<span style="color: black;" class="output">{{ ss }}</span> <br>
+		<span style="color: black;" class="output">{{ prob }}</span>
+		<!-- <h4><input type="button"  onclick="location.href='./'" value="Обратно к меню"></h4> -->
+		<br>
+		<br>
+		<br>
+		<a href="./" class="button">Обратно в меню</a>
 	</center>
+	<div class="waveWrapper waveAnimation">
+      
+		<div class="waveWrapperInner bgTop">
+		  <CENTER><h1>Сделано учениками МИРЭА</h1>
+		  <h1>Веселовым Олегом и Ковалевым Алексеем</h1></CENTER>
+		  <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+		  </div>
+		
+		<div class="waveWrapperInner bgMiddle">
+		  
+		  <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+		  </div>
+		<div class="waveWrapperInner bgBottom">
+		  
+		  <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+		</div>
+		
+	  </div>
 </body>
 </html>
