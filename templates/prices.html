@@ -1,26 +1,58 @@
 <html>
     <head>
         <title>Цены</title>
+        <style href="{{ url_for('static', filename='css/prices.css') }}"></style>
+        
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prices.css') }}">
+    
     </head>
-    <body bgcolor="#40E0D0">
-        <center>
-            <h1>House Prices Prediction</h1>
+    <body >
+        
+            <header>
+                
+                <div id="logo" style="text-align: center;">
+                   <span >House Prices Prediction</span></div>
+            </header>
             
-
-            <form action="predict_prices" method="POST">
+                <center>
+                  <p>
+            <form  class="fat" action="predict_prices" method="POST">
                 <b>
-                    Площадь участка:<br>(В среднем от 1000 до 11000)<br> <input type="number", name='LotArea', placeholder="", autocomplete="off", required="required"><br><br>
+                    
+                    Площадь участка:<br>(В среднем от 1000 до 11000)<br> <input  type="number", name='LotArea', placeholder="", autocomplete="off", required="required"><br><br>
                     Год постройки:<br>(В среднем от 1950 до 2005)<br> <input type="number", name='YearBuilt', placeholder="", autocomplete="off", required="required"><br><br>
                     Количество спален:<br>(В среднем от 1 до 4)<br>  <input type="number", name='BedroomAbvGr', placeholder="" autocomplete="off", required="required"><br><br>
                     Качество материалов и отделки дома:<br>(В среднем от 2 до 10)<br>  <input type="number", name='OverallQual', placeholder="", autocomplete="off", required="required"><br><br>
                     Количество мест в гараже:<br>(В среднем от 0 до 3)<br>  <input type="number", name='GarageCars', placeholder="", autocomplete="off", required="required"><br><br><br>
                     <input type="submit", value="Прогноз">
+                    
                 </b>
             </form>
             <div>
-                {{ data }}
+                <br>
+                <div style="font-size: 1.3em;">{{ data }}</div>
             </div>
-            <h4><input type="button" onclick="location.href='/'" value="Обратно к меню"></h4>
+        </p>
+            <br>
+            <p><a href="./" class="button">Обратно в меню</a></p></center>
+            <div class="waveWrapper waveAnimation">
+      
+                <div class="waveWrapperInner bgTop">
+                  <CENTER><h1>Сделано учениками МИРЭА</h1>
+                  <h1>Веселовым Олегом и Ковалевым Алексеем</h1></CENTER>
+                  <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+                  </div>
+                
+                <div class="waveWrapperInner bgMiddle">
+                  
+                  <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+                  </div>
+                <div class="waveWrapperInner bgBottom">
+                  
+                  <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+                </div>
+                
+              </div>
         </center>
     </body>
 </html>
