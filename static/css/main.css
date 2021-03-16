@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Suez+One');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body, html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #ffffff;
+    font-family: Trebuchet MS, Helvetica;
+  }
+  /*шапка */
+header {
+    width: 100%;
+    padding: 10px 0.5% 0px 0.5%;
+    background: linear-gradient(45deg,#27273c,#86377b, #cfd5ff);
+    float: left;
+    position: fixed;
+  }
+  
+  header #logo {
+    color: #fff;
+    cursor: pointer;
+   font-family: Poppins;
+  }
+  
+  header #logo span {
+    font-size: 1.7em;
+    line-height: 45px;
+    margin-left: 40px;
+    font-family: 'Suez One', serif;
+  }
+  
+  @media (min-width: 701px) {
+    #logo {
+      float: left;
+      width: 30%;
+      font-size: 1.1em;
+    }
+  
+   
+  }
+  
+  @media (max-width: 700px) {
+    #logo {
+      margin-top: 15px;
+      width: 100%;
+      font-size: 1.5em;
+    }
+  
+    
+  }
+  #chose {
+    float: left;
+    
+  
+    background-blend-mode: multiply;
+    background: linear-gradient(0deg,#27273c 20%,rgb(216, 216, 216) 80%);
+    background-size: cover;
+    background-attachment: fixed;
+  
+    padding: 100px 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-decoration: none;
+  }
+  h3{
+    text-decoration: none;
+  }
+ 
+  @keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 80%;
+    
+    margin: auto;
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+}
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveTop {
+  animation: move-wave 3s;
+   -webkit-animation: move-wave 3s;
+   -webkit-animation-delay: 1s;
+   animation-delay: 1s;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+h1{
+  color: white;
+}

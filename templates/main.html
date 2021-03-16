@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Меню</title>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Меню</title>
+    <style href="css/main.css"></style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
+<style>
+    body {
+      overflow-y: hidden;
+    }
+</style>
 <body bgcolor="LightCoral">
-    <center>
+    <header>
+        <div id="logo" onclick="slowScroll('#top')">
+            <span>Меню</span></div>
+    </header>
+    
+    
+      <div id="chose">
+      
     <h1>Выберите модель:</h1>
 
     <h3><a action="predict_prices" href="{{ url_for('predict_prices') }}">1) Прогноз цены дома</a></h3>
     <h3><a action="predict_simpsons" href="{{ url_for('predict_simpsons') }}">2) Классификатор персонажей из Симпсонов</a></h3>
-    </center>
+   </div>
+   
+  
+    <div class="waveWrapper waveAnimation">
+      
+      <div class="waveWrapperInner bgTop">
+        <CENTER><h1>Сделано учениками МИРЭА</h1>
+        <h1>Веселовым Олегом и Ковалевым Алексеем</h1></CENTER>
+        <div class="wave waveTop" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-top.png')"></div>
+        </div>
+      
+      <div class="waveWrapperInner bgMiddle">
+        
+        <div class="wave waveMiddle" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-mid.png')"></div>
+        </div>
+      <div class="waveWrapperInner bgBottom">
+        
+        <div class="wave waveBottom" style="background-image: url('http://front-end-noobs.com/jecko/img/wave-bot.png')"></div>
+      </div>
+      
+    </div>
+  </div>
+    <script>
+        function slowScroll(id) {
+          $('html, body').animate({
+            scrollTop: $(id).offset().top
+          }, 500);
+        }
     
+        $(document).on("scroll", function () {
+          if($(window).scrollTop() === 0)
+            $("header").removeClass("fixed");
+          else
+            $("header").attr("class", "fixed");
+        });
+      </script>
 </body>
 </html>

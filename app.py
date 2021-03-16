@@ -23,6 +23,7 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(__file__)
 app.config['UPLOAD_FOLDER'] = os.path.join(BASE_DIR, 'uploaded/image/')
 PATH_TO_STATIC = os.path.join(BASE_DIR, 'static/')
+PATH_TO_IMG = os.path.join(BASE_DIR, 'static/img')
 
 model = tf.keras.models.load_model('simpsons.h5') 
 model_prices = pickle.load(open('sale.pkl', 'rb'))
@@ -114,9 +115,9 @@ def predict_prices():
 #Функция для классификация персонажа из Симпсонов
 @app.route('/predict_simpsons', methods=['GET','POST'])
 def predict_simpsons():
-    filelist = [ f for f in os.listdir(PATH_TO_STATIC)]
+    filelist = [ f for f in os.listdir(PATH_TO_IMG)]
     for f in filelist:
-        os.remove(os.path.join(PATH_TO_STATIC, f))
+        os.remove(os.path.join(PATH_TO_IMG, f))
     if request.method == 'POST':
         filelist = [ f for f in os.listdir(app.config['UPLOAD_FOLDER'])]
         for f in filelist:
@@ -129,8 +130,8 @@ def predict_simpsons():
 
         global image
         image = image_for_upload
-        shutil.copy(image, PATH_TO_STATIC)
-        final_image = os.listdir(PATH_TO_STATIC)[0]
+        shutil.copy(image, PATH_TO_IMG)
+        final_image = os.listdir(PATH_TO_IMG)[0]
         result = render_template('index.html', ss = val, prob=prob, image=final_image)
         return result
     else:

@@ -13,7 +13,7 @@
 			<input type="submit" name="btn">
 		</form> <br><br><br>
 		{% if image != null %}
-		<img src= "{{url_for('static', filename=image)}}" height=450px> <br> <br>
+		<img src= "{{url_for('static', filename='img/'+image)}}" height=450px> <br> <br>
 		{% endif %}
 		{{ ss }} <br>
 		{{ prob }}
